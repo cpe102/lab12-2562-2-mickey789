@@ -18,3 +18,15 @@ int main()
 }
 
 //Write definition of stat() here 
+float x;
+void stat(const double A[],int N,double B[]){
+    B[2] = A[0];
+    B[3] = A[0];
+    for(int i=0;i<N;i++){
+        B[0] += A[i]/N;
+        x += pow(A[i],2)/N;
+        B[1] = sqrt(x-pow(B[0],2));
+        if(B[2] < A[i]) B[2]=A[i]; 
+        if(B[3] > A[i]) B[3]=A[i]; 
+    }
+}
